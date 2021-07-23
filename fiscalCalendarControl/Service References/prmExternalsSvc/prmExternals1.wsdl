@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendResources">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="employees" type="tns:ArrayOfResourceStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfResourceStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="resourceStruct" type="tns:resourceStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="resourceStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="employeeId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="department" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="shift" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="active" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ee_group" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="sch_hours" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="title" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="hireDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="userName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="supervisorId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendResourcesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendResourcesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="listJobs">
+        <s:complexType />
+      </s:element>
+      <s:element name="listJobsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="listJobsResult" type="tns:ArrayOfJobStruct" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfJobStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="jobStruct" type="tns:jobStruct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="jobStruct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="jobNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="jobDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="sendInvoices">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="iType" type="tns:invoiceType" />
+            <s:element minOccurs="0" maxOccurs="1" name="jobno" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="amt" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="invoiceType">
+        <s:restriction base="s:string">
+          <s:enumeration value="estimate" />
+          <s:enumeration value="quote" />
+          <s:enumeration value="invoice" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="sendInvoicesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="sendInvoicesResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="fiscalPeriods">
+        <s:complexType />
+      </s:element>
+      <s:element name="fiscalPeriodsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fiscalPeriodsResult" type="tns:ArrayOfPeriodStructure" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPeriodStructure">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="periodStructure" nillable="true" type="tns:periodStructure" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="periodStructure">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="calDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="fiscalWeek" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fiscalPeriod" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fiscalQuarter" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="fiscalYear" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="workDay" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayNum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayWeek" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayBgnd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="displayQtr" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendResourcesSoapIn">
+    <wsdl:part name="parameters" element="tns:sendResources" />
+  </wsdl:message>
+  <wsdl:message name="sendResourcesSoapOut">
+    <wsdl:part name="parameters" element="tns:sendResourcesResponse" />
+  </wsdl:message>
+  <wsdl:message name="listJobsSoapIn">
+    <wsdl:part name="parameters" element="tns:listJobs" />
+  </wsdl:message>
+  <wsdl:message name="listJobsSoapOut">
+    <wsdl:part name="parameters" element="tns:listJobsResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendInvoicesSoapIn">
+    <wsdl:part name="parameters" element="tns:sendInvoices" />
+  </wsdl:message>
+  <wsdl:message name="sendInvoicesSoapOut">
+    <wsdl:part name="parameters" element="tns:sendInvoicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="fiscalPeriodsSoapIn">
+    <wsdl:part name="parameters" element="tns:fiscalPeriods" />
+  </wsdl:message>
+  <wsdl:message name="fiscalPeriodsSoapOut">
+    <wsdl:part name="parameters" element="tns:fiscalPeriodsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="prmExternalsSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendResources">
+      <wsdl:input message="tns:sendResourcesSoapIn" />
+      <wsdl:output message="tns:sendResourcesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="listJobs">
+      <wsdl:input message="tns:listJobsSoapIn" />
+      <wsdl:output message="tns:listJobsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendInvoices">
+      <wsdl:input message="tns:sendInvoicesSoapIn" />
+      <wsdl:output message="tns:sendInvoicesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="fiscalPeriods">
+      <wsdl:input message="tns:fiscalPeriodsSoapIn" />
+      <wsdl:output message="tns:fiscalPeriodsSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="prmExternalsSoap" type="tns:prmExternalsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendResources">
+      <soap:operation soapAction="http://tempuri.org/sendResources" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listJobs">
+      <soap:operation soapAction="http://tempuri.org/listJobs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvoices">
+      <soap:operation soapAction="http://tempuri.org/sendInvoices" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fiscalPeriods">
+      <soap:operation soapAction="http://tempuri.org/fiscalPeriods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="prmExternalsSoap12" type="tns:prmExternalsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendResources">
+      <soap12:operation soapAction="http://tempuri.org/sendResources" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listJobs">
+      <soap12:operation soapAction="http://tempuri.org/listJobs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendInvoices">
+      <soap12:operation soapAction="http://tempuri.org/sendInvoices" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="fiscalPeriods">
+      <soap12:operation soapAction="http://tempuri.org/fiscalPeriods" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="prmExternals">
+    <wsdl:port name="prmExternalsSoap" binding="tns:prmExternalsSoap">
+      <soap:address location="http://vus-gldw-d01/rfcWebServices/prmExternals.asmx" />
+    </wsdl:port>
+    <wsdl:port name="prmExternalsSoap12" binding="tns:prmExternalsSoap12">
+      <soap12:address location="http://vus-gldw-d01/rfcWebServices/prmExternals.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

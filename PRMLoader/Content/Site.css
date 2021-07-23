@@ -1,0 +1,178 @@
+﻿html,
+body {
+    height: 100%;
+}
+
+body {
+    /*padding-top: 20px;*/
+    padding-bottom: 5px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar {
+    min-height: 30px;
+    max-height: 30px;
+    margin-bottom: 0px;
+}
+
+.navbar-brand {
+    padding: 5px 0px;
+}
+
+.block-blue {
+    background: #0ea0d8;
+    background: -moz-linear-gradient(top, #0ea0d8 0%, #1d6bc1 100%);
+    background: -webkit-linear-gradient(top, #0ea0d8 0%, #1d6bc1 100%);
+    background: linear-gradient(to bottom, #0ea0d8 0%, #1d6bc1 100%);
+    border-radius: 3px;
+}
+
+    .block-blue:hover {
+        background: #2769d6;
+    }
+
+ul.nav-block {
+    margin-bottom: 20px;
+}
+
+    ul.nav-block li {
+        display: inline-block;
+        margin: 0 2px 4px 2px;
+    }
+
+    ul.nav-block.center {
+        text-align: center;
+    }
+
+    ul.nav-block li a {
+        position: relative;
+        display: block;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        box-sizing: border-box;
+        height: 100px;
+        width: 100px;
+        color: #ffffff;
+        font-size: 12px;
+        line-height: 120%;
+        text-align: center;
+        text-decoration: none;
+    }
+
+        ul.nav-block li a .nav-text {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        ul.nav-block li a img.restricted {
+            position: absolute;
+            top: -7px;
+            right: -7px;
+        }
+
+        ul.nav-block li a img {
+            text-align: center;
+            display: block;
+            margin: auto;
+        }
+
+.tile {
+    padding-left: 0px;
+}
+
+.accessdenied {
+    text-align: center;
+    font-weight: bolder;
+}
+
+/* Applied Logo */
+.logo-wrapper {
+    margin: 20px 0;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+    .logo-wrapper a.hamburger {
+        margin-right: 10px;
+        display: inline-block;
+    }
+
+a.applied-logo {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+    a.applied-logo img {
+        max-width: 120px;
+    }
+
+@media (max-width:767px) {
+    a.applied-logo {
+        float: right;
+    }
+
+        a.applied-logo img {
+            max-width: 90px;
+        }
+}
+
+.center {
+    text-align: center;
+}
+
+.right {
+    text-align: right;
+}
+
+.header {
+    background-color: #4599C3;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+    color: #ffffff;
+    float: left;
+    max-width: 120px;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 10px 0 0;
+    font-size: 14px;
+}
+
+.marginTopBottom {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.appName {
+    color: #ffffff;
+    float: left;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 5px 10px 0 0;
+    font-size: 14px;
+}

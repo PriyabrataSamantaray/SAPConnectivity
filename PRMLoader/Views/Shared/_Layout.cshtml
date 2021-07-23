@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html ng-app="sigfp" ng-controller="mainCtrl">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{{tabTitle}}</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="row header" ng-if="showPRMLoaderStartPage">
+        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-8">
+            <a href="#" class="clearfix marginTopBottom">
+                <span class="appName">Project Resource Management</span>
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-2 col-xs-4 center">
+            <a href="#" class="applied-logo">
+                <img src="~/Images/Applied_Materials_Logo.png" alt="Applied Capability maturity Model" />
+            </a>
+        </div>
+        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12 right">
+            <a href="#" class="clearfix marginTopBottom">
+                <span class="name">{{data.fullName}}</span>
+            </a>
+        </div>
+    </div>
+    <iframe style="width:100%; height:100%;border: none;" ng-src="{{trustSrc(selectedProjectUrl)}}" ng-if="!showPRMLoaderStartPage">
+        Something wrong...
+    </iframe>
+    <div ng-if="showPRMLoaderStartPage" style="padding-top:100px">
+        <ul class="nav-block center clearfix tile">
+            <li ng-repeat="proj in accessibleProjects">
+                <a class="block-blue" ng-click="routeChosen(proj)">
+                    <div ng-bind-html="(proj.ProjectName=='MyTeam'?'SPG<br/>WWOps<br/>IPC': proj.ProjectName + '<br/> <br/> <br/>') | trustHtml"></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div ng-if="!data.hasAccessToApplication" class="accessdenied">
+        <span class="boldString">YOU DO NOT HAVE ACCESS TO THIS APPLICATION. <br /> PLEASE CONTACT ADMINISTRATOR.</span>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

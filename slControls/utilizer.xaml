@@ -1,0 +1,21 @@
+﻿<UserControl x:Class="slControls.utilizer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+    mc:Ignorable="d"
+    d:DesignHeight="13" d:DesignWidth="80" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" HorizontalAlignment="Center">
+
+    <Grid x:Name="LayoutRoot" Background="{x:Null}" Height="13" Width="80" Visibility="Collapsed">
+        <Rectangle RadiusX="6" RadiusY="20" Height="13" HorizontalAlignment="Left" Name="grayBar" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="40" Fill="Gray" Margin="40,0,0,0" Visibility="Collapsed" />
+        <Rectangle RadiusX="6" RadiusY="20" Height="13" HorizontalAlignment="Left" Name="redBar" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="40" Fill="#FFE52323" Margin="40,0,0,0" Visibility="Collapsed" />
+        <Rectangle RadiusX="6" RadiusY="20" Height="13" HorizontalAlignment="Left" Name="yellowBar" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="40" Fill="Yellow" Margin="40,0,0,0" Visibility="Collapsed" />
+        <Rectangle RadiusX="6" RadiusY="20" Height="13" HorizontalAlignment="Left" Name="greenBar" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="40" Fill="Green" Margin="40,0,0,0" Visibility="Collapsed" />
+        <sdk:Label  Height="13" HorizontalAlignment="Center" Margin="0,0,40,0" Name="label1" VerticalAlignment="Top" Width="40" FontSize="10" Foreground="Black" />
+        <sdk:Label  Height="13" HorizontalAlignment="Center" Margin="10,0,0,0" Name="label2" VerticalAlignment="Top" Width="40" FontSize="10" Foreground="Black" Visibility="Collapsed" />
+    </Grid>
+
+
+    
+</UserControl>

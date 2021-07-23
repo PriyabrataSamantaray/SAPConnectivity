@@ -1,0 +1,18 @@
+﻿<controls:ChildWindow x:Class="slControls.metaGrid.reportMenu"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           Title="" HorizontalAlignment="Center" OverlayBrush="#37000000" mc:Ignorable="d" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" d:DesignWidth="329" d:DesignHeight="337">
+    <controls:ChildWindow.Resources>
+        <ResourceDictionary Source="../assets/styles.xaml" />
+    </controls:ChildWindow.Resources>
+    <Grid x:Name="LayoutRoot" Height="285" Margin="0,41,1,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="296">
+        <Button x:Name="saveReport" Content="Button" HorizontalAlignment="Left" Style="{StaticResource reportButton}" Width="290" Margin="2,79,0,0" Height="56" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Click="saveReport_Click" />
+
+        <Button x:Name="deleteReport" Content="Button" HorizontalAlignment="Left" Style="{StaticResource deleteReport}" Width="290" Margin="2,145,0,0" Height="50" VerticalAlignment="Top" Click="deleteReport_Click" />
+        <Button x:Name="exportReport" Content="Button" HorizontalAlignment="Left" Style="{StaticResource exportReport}" Width="290" Margin="2,207,0,0" Height="50" VerticalAlignment="Top" Click="exportReport_Click" />
+        <Button x:Name="showHide" Content="Button" HorizontalAlignment="Left" Style="{StaticResource showHideColumns}" Width="290" Margin="2,4,0,0" Height="55" VerticalAlignment="Top" Click="showHide_Click" />
+        <Path x:Name="Divide1" Data="M7,69 L279,69" Height="1" Margin="7,69,12,0" StrokeStartLineCap="Flat" Stretch="Fill" StrokeEndLineCap="Flat" Stroke="#FF505E6E" StrokeThickness="2" StrokeMiterLimit="10" StrokeLineJoin="Miter" UseLayoutRounding="False" VerticalAlignment="Top"/>
+        <Path x:Name="Divide2" Data="M7,69 L279,69" Height="1" Margin="10,0,9,68.668" StrokeStartLineCap="Flat" Stretch="Fill" StrokeEndLineCap="Flat" Stroke="#FF505E6E" StrokeThickness="2" StrokeMiterLimit="10" StrokeLineJoin="Miter" UseLayoutRounding="False" VerticalAlignment="Bottom"/>
+    </Grid>
+</controls:ChildWindow>

@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="fiscalCalendar.calendar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:fiscalCalendar.viewModel"
+    mc:Ignorable="d"
+    d:DesignHeight="265" d:DesignWidth="354" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk">
+    <UserControl.Resources>
+        <viewModels:calendarViewModel x:Key="ViewModel" />
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" Width="354"   DataContext="{Binding Source={StaticResource ViewModel}}"  Visibility="{Binding Path=calVisibility}">
+
+
+        <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="37,12,0,0" Width="305" Height="28" Orientation="Horizontal">
+            <sdk:Label Content="{Binding Path=yearName}" Width="305" Height="28" HorizontalContentAlignment="Center" FontSize="14" FontWeight="SemiBold" Visibility="{Binding Path=headerVisibility}" />
+        </StackPanel>
+
+        <Grid Margin="{Binding Path=gridStartPos}">
+        <Rectangle Height="52" HorizontalAlignment="Left" Margin="37,0,0,0" Name="rectangle1" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="308" />
+        <Rectangle Height="32" HorizontalAlignment="Left" Margin="37,0,0,0" Name="rectangle2" Stroke="Black" StrokeThickness="1" VerticalAlignment="Top" Width="308" />
+
+            <StackPanel Margin="38,31,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="22" Width="308" Visibility="{Binding Path=vseaWeekVisible}">
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="SAT" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="SUN" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="MON" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="TUE" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="WED" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="THU" />
+                <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="FRI" />
+            </StackPanel>
+            <StackPanel Margin="38,31,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="22" Width="308" Visibility="{Binding Path=amatWeekVisible}">
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="MON" />
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="TUE" />
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="WED" />          
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="THU" />
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="FRI" />
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="SAT" />
+            <sdk:Label Width="44" Height="23" HorizontalContentAlignment="Center" Content="SUN" />
+        </StackPanel>
+        <StackPanel Margin="38,52,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308"  Name="week1" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[0].displayNum}" Background="{Binding Path=data[0].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[1].displayNum}" Background="{Binding Path=data[1].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[2].displayNum}" Background="{Binding Path=data[2].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[3].displayNum}" Background="{Binding Path=data[3].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[4].displayNum}" Background="{Binding Path=data[4].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[5].displayNum}" Background="{Binding Path=data[5].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[6].displayNum}" Background="{Binding Path=data[6].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+            <StackPanel Margin="38,80,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308" Name="week2" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[7].displayNum}" Background="{Binding Path=data[7].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[8].displayNum}" Background="{Binding Path=data[8].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[9].displayNum}" Background="{Binding Path=data[9].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[10].displayNum}" Background="{Binding Path=data[10].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[11].displayNum}" Background="{Binding Path=data[11].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[12].displayNum}" Background="{Binding Path=data[12].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[13].displayNum}" Background="{Binding Path=data[13].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+            <StackPanel Margin="38,108,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308" Name="week3" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[14].displayNum}" Background="{Binding Path=data[14].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[15].displayNum}" Background="{Binding Path=data[15].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[16].displayNum}" Background="{Binding Path=data[16].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[17].displayNum}" Background="{Binding Path=data[17].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[18].displayNum}" Background="{Binding Path=data[18].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[19].displayNum}" Background="{Binding Path=data[19].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[20].displayNum}" Background="{Binding Path=data[20].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+            <StackPanel Margin="38,136,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308" Name="week4" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[21].displayNum}" Background="{Binding Path=data[21].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[22].displayNum}" Background="{Binding Path=data[22].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[23].displayNum}" Background="{Binding Path=data[23].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[24].displayNum}" Background="{Binding Path=data[24].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[25].displayNum}" Background="{Binding Path=data[25].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[26].displayNum}" Background="{Binding Path=data[26].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[27].displayNum}" Background="{Binding Path=data[27].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+            <StackPanel Margin="38,164,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308" Visibility="{Binding Path=row5Visible}" Name="week5" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[28].displayNum}" Background="{Binding Path=data[28].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[29].displayNum}" Background="{Binding Path=data[29].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[30].displayNum}" Background="{Binding Path=data[30].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[31].displayNum}" Background="{Binding Path=data[31].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[32].displayNum}" Background="{Binding Path=data[32].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[33].displayNum}" Background="{Binding Path=data[33].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[34].displayNum}" Background="{Binding Path=data[34].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+            <StackPanel Margin="38,191,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308" Visibility="{Binding Path=row6Visible}" Name="week6" MouseEnter="StackPanel_MouseEnter" MouseLeave="week_MouseLeave"  MouseLeftButtonDown="week_MouseLeftButtonDown" MouseRightButtonDown="week_MouseRightButtonDown">
+            <sdk:Label Content="{Binding Path=data[35].displayNum}" Background="{Binding Path=data[35].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[36].displayNum}" Background="{Binding Path=data[36].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[37].displayNum}" Background="{Binding Path=data[37].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[38].displayNum}" Background="{Binding Path=data[38].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[39].displayNum}" Background="{Binding Path=data[39].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[40].displayNum}" Background="{Binding Path=data[40].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+            <sdk:Label Content="{Binding Path=data[41].displayNum}" Background="{Binding Path=data[41].displayBgnd}" Width="44" Height="28" HorizontalContentAlignment="Center"  />
+        </StackPanel>
+        <Rectangle Height="29"  HorizontalAlignment="Left" Margin="37,51,0,0" Name="row1" Stroke="{Binding Path=week1BrdColor}" StrokeThickness="{Binding Path=week1Wdth}" VerticalAlignment="Top" Width="308" />
+            <Rectangle Height="29" HorizontalAlignment="Left" Margin="37,79,0,0" Name="row2" Stroke="{Binding Path=week2BrdColor}" StrokeThickness="{Binding Path=week2Wdth}" VerticalAlignment="Top" Width="308" />
+            <Rectangle Height="29" HorizontalAlignment="Left" Margin="37,107,0,0" Name="row3" Stroke="{Binding Path=week3BrdColor}" StrokeThickness="{Binding Path=week3Wdth}" VerticalAlignment="Top" Width="308" />
+            <Rectangle Height="29" HorizontalAlignment="Left" Margin="37,135,0,0" Name="row4" Stroke="{Binding Path=week4BrdColor}" StrokeThickness="{Binding Path=week4Wdth}" VerticalAlignment="Top" Width="308" />
+            <Rectangle Height="29" HorizontalAlignment="Left" Margin="37,163,0,0" Name="row5" Stroke="{Binding Path=week5BrdColor}" StrokeThickness="{Binding Path=week5Wdth}" VerticalAlignment="Top" Width="308" Visibility="{Binding Path=row5Visible}" />
+            <Rectangle Height="29" HorizontalAlignment="Left" Margin="37,191,0,0" Name="row6" Stroke="{Binding Path=week6BrdColor}" StrokeThickness="{Binding Path=week6Wdth}" VerticalAlignment="Top" Width="308" Visibility="{Binding Path=row6Visible}" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="81,31,0,0" Name="col1" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="125,31,0,0" Name="col2" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="169,31,0,0" Name="col3" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="213,31,0,0" Name="col4" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="257,31,0,0" Name="col5" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <Rectangle Height="{Binding Path=calHeight}" HorizontalAlignment="Left" Margin="301,31,0,0" Name="col6" Stroke="Black" StrokeThickness=".5" VerticalAlignment="Top" Width="1" />
+        <StackPanel Margin="38,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Horizontal" Height="28" Width="308">
+            <Button Height="26" Width="26" IsEnabled="{Binding Path=moveLeftEnabled}" Margin="2,0,0,0" Click="prvPeriod_Click" Content="&lt;" FontWeight="Bold" Visibility="{Binding Path=headerVisibility}"></Button>
+            <sdk:Label Height="28"  Name="label1" Content="{Binding Path=monthName}"  Width="250" HorizontalContentAlignment="Center" Margin="{Binding Path=monthStringStartPos}" MouseLeftButtonDown="month_MouseLeftButtonDown" />
+            <Button Height="26" Width="26"  Click="nxtPeriod_Click" IsEnabled="{Binding Path=moveRightEnabled}" Content="&gt;" FontWeight="Bold" Visibility="{Binding Path=headerVisibility}"></Button>
+        </StackPanel>
+        <StackPanel Margin="2,51,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Orientation="Vertical"  Width="28">
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[0].displayWeek}" Background="{Binding Path=week1Bkgnd}" />
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[7].displayWeek}" Background="{Binding Path=week2Bkgnd}" />
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[14].displayWeek}" Background="{Binding Path=week3Bkgnd}" />
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[21].displayWeek}" Background="{Binding Path=week4Bkgnd}" />
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[28].displayWeek}" Background="{Binding Path=week5Bkgnd}" Visibility="{Binding Path=row5Visible}" />
+            <sdk:Label Height="28"    Width="28" HorizontalContentAlignment="Center" Content="{Binding Path=data[35].displayWeek}" Background="{Binding Path=week6Bkgnd}" Visibility="{Binding Path=row6Visible}" />
+        </StackPanel>
+        </Grid>
+
+    </Grid>
+</UserControl>

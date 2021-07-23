@@ -1,0 +1,279 @@
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAP_MDG_ZAF0204_Staging]') AND type in (N'U'))
+BEGIN
+	IF NOT exists(SELECT 1 FROM [dbo].[SAP_MDG_ZAF0204_Staging])
+	BEGIN
+		DROP TABLE [dbo].[SAP_MDG_ZAF0204_Staging]
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0204_Staging](
+			[AMAT_PRODUCT] [nvarchar](6) NOT NULL,
+			[PROD_DESC] [nvarchar](40) NULL,
+			[BUOWN] [nvarchar](20) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](12) NULL,
+			[CREATEDBY_NAME] [nvarchar](80) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[ZCOMMENT] [nvarchar](100) NULL,
+			CONSTRAINT [PK_SAP_MDG_ZAF0204_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[AMAT_PRODUCT] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+	END
+END
+ELSE
+BEGIN
+	SET ANSI_NULLS ON
+	SET QUOTED_IDENTIFIER ON
+	SET ANSI_PADDING ON
+
+	CREATE TABLE [dbo].[SAP_MDG_ZAF0204_Staging](
+		[AMAT_PRODUCT] [nvarchar](6) NOT NULL,
+		[PROD_DESC] [nvarchar](40) NULL,
+		[BUOWN] [nvarchar](20) NULL,
+		[INACTIVE_PROD] [nvarchar](1) NULL,
+		[CREATED_ON] [date] NULL,
+		[CREATED_BY] [nvarchar](12) NULL,
+		[CREATEDBY_NAME] [nvarchar](80) NULL,
+		[CHANGED_ON] [date] NULL,
+		[CHANGED_BY] [nvarchar](12) NULL,
+		[ZCOMMENT] [nvarchar](100) NULL,
+		CONSTRAINT [PK_SAP_MDG_ZAF0204_Staging] PRIMARY KEY CLUSTERED 
+	(
+		[AMAT_PRODUCT] ASC
+	)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+	) ON [PRIMARY]
+
+	SET ANSI_PADDING OFF
+END
+--------------------------------------------------------------------------------------------------------------------------------------------
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAP_MDG_ZAF0207_Staging]') AND type in (N'U'))
+BEGIN
+	IF NOT exists(SELECT 1 FROM [dbo].[SAP_MDG_ZAF0207_Staging])
+	BEGIN
+		DROP TABLE [dbo].[SAP_MDG_ZAF0207_Staging]
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0207_Staging](
+			[AMAT_PRODUCT] [nvarchar](6) NOT NULL,
+			[VALID_FR] [date] NOT NULL,
+			[VALID_TO] [date] NOT NULL,
+			[PROD_LINE_G1] [nvarchar](6) NULL,
+			[PROD_LINE_G2] [nvarchar](6) NULL,
+			[PRCTR] [nvarchar](10) NULL,
+			[KPU] [nvarchar](4) NULL,
+			[BUSS_UNIT] [nvarchar](12) NULL,
+			[SEGMENT] [nvarchar](30) NULL,
+			[CMO_SEG1] [nvarchar](100) NULL,
+			[CMO_SEG2] [nvarchar](100) NULL,
+			[CMO_SEG3] [nvarchar](100) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[CHANGEDBY_NAME] [nvarchar](80) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0207_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[AMAT_PRODUCT] ASC, [VALID_FR] ASC,[VALID_TO] ASC 
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+	END
+END
+ELSE
+BEGIN
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0207_Staging](
+			[AMAT_PRODUCT] [nvarchar](6) NOT NULL,
+			[VALID_FR] [date] NOT NULL,
+			[VALID_TO] [date] NOT NULL,
+			[PROD_LINE_G1] [nvarchar](6) NULL,
+			[PROD_LINE_G2] [nvarchar](6) NULL,
+			[PRCTR] [nvarchar](10) NULL,
+			[KPU] [nvarchar](4) NULL,
+			[BUSS_UNIT] [nvarchar](12) NULL,
+			[SEGMENT] [nvarchar](30) NULL,
+			[CMO_SEG1] [nvarchar](100) NULL,
+			[CMO_SEG2] [nvarchar](100) NULL,
+			[CMO_SEG3] [nvarchar](100) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[CHANGEDBY_NAME] [nvarchar](80) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0207_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[AMAT_PRODUCT] ASC, [VALID_FR] ASC,[VALID_TO] ASC 
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+END
+------------------------------------------------------------------------------------------------------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAP_MDG_ZAF0205_Staging]') AND type in (N'U'))
+BEGIN
+	IF NOT exists(SELECT 1 FROM [dbo].[SAP_MDG_ZAF0205_Staging])
+	BEGIN
+		DROP TABLE [dbo].[SAP_MDG_ZAF0205_Staging]
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0205_Staging](
+			[PROD_LINE_G1] [nvarchar](6) NOT NULL,
+			[LINE_G1_DESC] [nvarchar](40) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](12) NULL,
+			[CREATEDBY_NAME] [nvarchar](80) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[ZCOMMENT] [nvarchar](100) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0205_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G1] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+	END
+END
+ELSE
+BEGIN
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0205_Staging](
+			[PROD_LINE_G1] [nvarchar](6) NOT NULL,
+			[LINE_G1_DESC] [nvarchar](40) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](12) NULL,
+			[CREATEDBY_NAME] [nvarchar](80) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[ZCOMMENT] [nvarchar](100) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0205_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G1] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+END
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAP_MDG_ZAF0206_Staging]') AND type in (N'U'))
+BEGIN
+	IF NOT exists(SELECT 1 FROM [dbo].[SAP_MDG_ZAF0206_Staging])
+	BEGIN
+		DROP TABLE [dbo].[SAP_MDG_ZAF0206_Staging]
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0206_Staging](
+			[PROD_LINE_G2] [nvarchar](6) NOT NULL,
+			[LINE_G2_DESC] [nvarchar](40) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](12) NULL,
+			[CREATEDBY_NAME] [nvarchar](80) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[ZCOMMENT] [nvarchar](100) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0206_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G2] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+	END
+END
+ELSE
+BEGIN
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZAF0206_Staging](
+			[PROD_LINE_G2] [nvarchar](6) NOT NULL,
+			[LINE_G2_DESC] [nvarchar](40) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](12) NULL,
+			[CREATEDBY_NAME] [nvarchar](80) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+			[ZCOMMENT] [nvarchar](100) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZAF0206_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G2] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+END
+----------------------------------------------------------------------------------------------------------------------------------------
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[SAP_MDG_ZOU0009_Staging]') AND type in (N'U'))
+BEGIN
+	IF NOT exists(SELECT 1 FROM [dbo].[SAP_MDG_ZOU0009_Staging])
+	BEGIN
+		DROP TABLE [dbo].[SAP_MDG_ZOU0009_Staging]
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZOU0009_Staging](
+			[PROD_LINE_G1] [nvarchar](6) NOT NULL,
+			[PROD_LINE_G2] [nvarchar](6) NOT NULL,
+			[BUSS_UNIT] [nvarchar](12) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](812) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZOU0009_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G1] ASC,[PROD_LINE_G2] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+	END
+END
+ELSE
+BEGIN
+		SET ANSI_NULLS ON
+		SET QUOTED_IDENTIFIER ON
+		SET ANSI_PADDING ON
+
+		CREATE TABLE [dbo].[SAP_MDG_ZOU0009_Staging](
+			[PROD_LINE_G1] [nvarchar](6) NOT NULL,
+			[PROD_LINE_G2] [nvarchar](6) NOT NULL,
+			[BUSS_UNIT] [nvarchar](12) NULL,
+			[INACTIVE_PROD] [nvarchar](1) NULL,
+			[CREATED_ON] [date] NULL,
+			[CREATED_BY] [nvarchar](812) NULL,
+			[CHANGED_ON] [date] NULL,
+			[CHANGED_BY] [nvarchar](12) NULL,
+		 CONSTRAINT [PK_SAP_MDG_ZOU0009_Staging] PRIMARY KEY CLUSTERED 
+		(
+			[PROD_LINE_G1] ASC,[PROD_LINE_G2] ASC
+		)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+		) ON [PRIMARY]
+
+		SET ANSI_PADDING OFF
+END

@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="fiscalCalendar.fiscalPeriod"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+              xmlns:viewModels="clr-namespace:fiscalCalendar.viewModel"
+             xmlns:my="clr-namespace:fiscalCalendar"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <UserControl.Resources>
+        <viewModels:fiscalPeriodViewModel x:Key="ViewModel" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="Transparent" DataContext="{Binding Source={StaticResource ViewModel}}" >
+        <my:calendar data="{Binding Path=allData}" result="{Binding Path=result, Mode=TwoWay}" />
+    </Grid>
+</UserControl>

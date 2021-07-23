@@ -1,0 +1,11 @@
+#views
+v_adGroups.sql
+v_gfpCostCenters.sql
+v_pseSecurity.sql
+v_overlappingCostCenters.sql
+v_gfpBUUsers.sql
+v_productLines.sql
+
+#stored procs
+sp_LoadPersonnelData.sql
+sp_LoadProductLineData.sql

@@ -1,0 +1,29 @@
+﻿<controls:ChildWindow xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="slControls.metaGrid.showColumns"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+           
+           Width="481" Height="360"
+           Title="Show or Hide Columns"  ToolTipService.ToolTip="Modify visibility of columns in report" Foreground="Black" FontSize="11" >
+    <controls:ChildWindow.Resources>
+        <ResourceDictionary Source="../assets/styles.xaml" />
+    </controls:ChildWindow.Resources>
+    <Grid x:Name="LayoutRoot" Margin="2"  >
+
+        <Canvas HorizontalAlignment="Left" Width="450" Margin="3,28,0,4">
+            <ListBox x:Name="hidden"     Height="212" Canvas.Left="16" Canvas.Top="25" Width="161" ToolTipService.ToolTip="List of items available to be displayed" SelectionChanged="hidden_SelectionChanged" />
+            <ListBox x:Name="shown"  Height="212" Canvas.Left="237" Canvas.Top="25" Width="161" ToolTipService.ToolTip="List of items displayed" SelectionChanged="shown_SelectionChanged" />
+            <sdk:Label x:Name="label" Height="16" Canvas.Left="61" Canvas.Top="5" Width="56" Content="Available" Foreground="#FF203D60"/>
+            <sdk:Label x:Name="label_Copy" Height="16" Canvas.Left="296" Canvas.Top="5" Width="53" Content="Displayed" Foreground="#FF203D60"/>
+            <Button x:Name="rightbutton"  Content="" Height="24" Canvas.Left="190" Canvas.Top="33" Width="40" Style="{StaticResource rightarrowButton}" ToolTipService.ToolTip="Move single item to Displayed list" IsEnabled="False" Click="rightbutton_Click" />
+            <Button x:Name="leftbutton"  Content="" Height="24" Canvas.Left="190" Canvas.Top="65" Width="40" Style="{StaticResource leftarrowButton}" ToolTipService.ToolTip="Move single item to Available list" IsEnabled="False" Click="leftbutton_Click" />
+            <Button x:Name="allleftbutton"  Content="" Height="24" Canvas.Left="190" Canvas.Top="113" Width="40" Style="{StaticResource allrightarrowButton}" ToolTipService.ToolTip="Move all items to Displayed list" Click="allleftbutton_Click" />
+            <Button x:Name="allrightbutton"    Content="" Height="24" Canvas.Left="190" Canvas.Top="145" Width="40" Style="{StaticResource allleftarrowButton}" ToolTipService.ToolTip="Move all items to Available list" Click="allrightbutton_Click" />
+            <Button x:Name="upbutton"  Content="" Height="24" Canvas.Left="401" Canvas.Top="31" Width="40" Style="{StaticResource upButton}" ToolTipService.ToolTip="Move item in list up - further left in headings" IsEnabled="False" Click="upbutton_Click" />
+            <Button x:Name="downbutton"  Content="" Height="24" Canvas.Left="401" Canvas.Top="63" Width="40" Style="{StaticResource downButton}" ToolTipService.ToolTip="Move item in list down - further right headings" IsEnabled="False" Click="downbutton_Click" />
+            <Button x:Name="cancelButton" Content="Cancel" Height="22" Canvas.Left="19" Canvas.Top="268" Width="64" Click="CancelButton_Click" ToolTipService.ToolTip="Ignore changes and close" />
+            <Button x:Name="okButton" Content="OK" Height="22" Canvas.Left="334" Canvas.Top="268" Width="64" Click="OKButton_Click" ToolTipService.ToolTip="Accept changes and close" />
+            <sdk:Label x:Name="label1" Height="24" Canvas.Left="241" Canvas.Top="237" Width="155" Content="Order top to bottom is column order&#xd;&#xa;left to right" FontSize="8"/>
+        </Canvas>
+    </Grid>
+</controls:ChildWindow>

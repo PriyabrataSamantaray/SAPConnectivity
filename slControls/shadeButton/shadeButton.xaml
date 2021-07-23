@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="slControls.shadeButton"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="32" d:DesignWidth="566">
+
+    <Grid x:Name="LayoutRoot" Background="Transparent" MouseEnter="LayoutRoot_MouseEnter" MouseLeave="LayoutRoot_MouseLeave" Width="566" Height="19">
+        <Image Visibility="Collapsed" Height="19" HorizontalAlignment="Left" Name="closeBig" MouseLeftButtonDown="closeBig_MouseLeftButtonDown" Stretch="Fill" VerticalAlignment="Top" Width="566" Source="img/closeApp.png" />
+        <Image x:Name="closeSmall" Margin="274,3,0,0" Source="img/upArrow.png" Stretch="Fill" HorizontalAlignment="Left" Width="19" Height="12" VerticalAlignment="Top"/>
+        <Image Visibility="Collapsed" Height="19" HorizontalAlignment="Left" Name="openBig" MouseLeftButtonDown="openBig_MouseLeftButtonDown" Stretch="Fill" VerticalAlignment="Top" Width="566" Source="img/openApp.png" />
+        <Image x:Name="openSmall" Source="img/downArrow.png" Stretch="Fill" Margin="274,4,0,0" HorizontalAlignment="Left" Width="19" Height="12" VerticalAlignment="Top" Visibility="Collapsed"/>
+    </Grid>
+</UserControl>

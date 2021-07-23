@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="slControls.certificates.certs"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"       
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:viewModels="clr-namespace:slControls.certificates.viewModels"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="13" d:DesignWidth="80">
+    <UserControl.Resources>
+        <viewModels:certsViewModel x:Key="ViewModel" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="{x:Null}" Height="13" Width="80" DataContext="{Binding Source={StaticResource ViewModel}}"  Visibility="{Binding Path=layoutVisibility, Source={StaticResource ViewModel}, Mode=TwoWay}"  >
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="0,0,0,0" Source="Images/cert-grn.png"  Visibility="{Binding Path=greenVisibility[0], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="14,0,0,0" Source="Images/cert-grn.png"  Visibility="{Binding Path=greenVisibility[1], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="28,0,0,0" Source="Images/cert-grn.png" Visibility="{Binding Path=greenVisibility[2], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="42,0,0,0" Source="Images/cert-grn.png"  Visibility="{Binding Path=greenVisibility[3], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="56,0,0,0" Source="Images/cert-grn.png"  Visibility="{Binding Path=greenVisibility[4], Mode=TwoWay}" />
+
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="0,0,0,0"  Source="Images/cert-yel.png"  Visibility="{Binding Path=yellowVisibility[0], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="14,0,0,0" Source="Images/cert-yel.png"  Visibility="{Binding Path=yellowVisibility[1], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="28,0,0,0" Source="Images/cert-yel.png" Visibility="{Binding Path=yellowVisibility[2], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="42,0,0,0" Source="Images/cert-yel.png"  Visibility="{Binding Path=yellowVisibility[3], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="56,0,0,0" Source="Images/cert-yel.png"  Visibility="{Binding Path=yellowVisibility[4], Mode=TwoWay}" />
+
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="0,0,0,0"  Source="Images/cert-gry.png"  Visibility="{Binding Path=grayVisibility[0], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="14,0,0,0" Source="Images/cert-gry.png"  Visibility="{Binding Path=grayVisibility[1], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="28,0,0,0" Source="Images/cert-gry.png" Visibility="{Binding Path=grayVisibility[2], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="42,0,0,0" Source="Images/cert-gry.png"  Visibility="{Binding Path=grayVisibility[3], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="56,0,0,0" Source="Images/cert-gry.png"  Visibility="{Binding Path=grayVisibility[4], Mode=TwoWay}" />
+
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="0,0,0,0"  Source="Images/cert-red.png"  Visibility="{Binding Path=redVisibility[0], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="14,0,0,0" Source="Images/cert-red.png"  Visibility="{Binding Path=redVisibility[1], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="28,0,0,0" Source="Images/cert-red.png" Visibility="{Binding Path=redVisibility[2], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="42,0,0,0" Source="Images/cert-red.png"  Visibility="{Binding Path=redVisibility[3], Mode=TwoWay}" />
+        <Image HorizontalAlignment="Left" Height="13" Width="13" VerticalAlignment="Top" Margin="56,0,0,0" Source="Images/cert-red.png"  Visibility="{Binding Path=redVisibility[4], Mode=TwoWay}" />
+
+
+    </Grid>
+
+
+</UserControl>

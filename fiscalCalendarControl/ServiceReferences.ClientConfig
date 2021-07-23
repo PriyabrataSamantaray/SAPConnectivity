@@ -1,0 +1,16 @@
+﻿<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="prmExternalsSoap" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647">
+                    <security mode="None" />
+                </binding>
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://vus-gldw-d01/rfcWebServices/prmExternals.asmx"
+                binding="basicHttpBinding" bindingConfiguration="prmExternalsSoap"
+                contract="prmExternalsSvc.prmExternalsSoap" name="prmExternalsSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

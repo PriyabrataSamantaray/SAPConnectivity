@@ -1,0 +1,55 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  xmlns:my="clr-namespace:fiscalCalendar"  x:Class="fiscalCalendar.fiscalYear"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+     xmlns:viewModels="clr-namespace:fiscalCalendar.viewModel"         
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" d:DesignHeight="851" d:DesignWidth="1504" 
+   >
+    <UserControl.Resources>
+        <viewModels:fiscalYearViewModel x:Key="ViewModel" />
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White" DataContext="{Binding Source={StaticResource ViewModel}}">
+        <StackPanel Orientation="Vertical">
+            <ComboBox ItemsSource="{Binding Path=displayYrs}" SelectedValue="{Binding Path=selectedYear, Mode=TwoWay}" Width="100"  />
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=multiWeekVisibility}">
+                <sdk:Label Content="Start Week:" />
+                <sdk:Label Content="{Binding Path=startWeek.displayFiscalWeek}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=multiWeekVisibility}">
+                <sdk:Label Content="End Week:" />
+                <sdk:Label Content="{Binding Path=endWeek.displayFiscalWeek}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Visibility="{Binding Path=oneWeekVisibility}" >
+                <sdk:Label Content="Selected Week:" />
+                <sdk:Label Content="{Binding Path=oneWeek.displayFiscalWeek}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">         
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,28,0,0">
+                    <sdk:Label  Height="28" Content="{Binding Path=qtr1Lbl}" Cursor="Hand" HorizontalAlignment="Center" FontWeight="SemiBold" MouseLeftButtonDown="quarter_MouseLeftButtonDown"  />
+                    <my:calendar smallData="{Binding Path=per1}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}"  />
+                    <my:calendar smallData="{Binding Path=per2}" editable="True"  startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per3}"  editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+            </StackPanel>
+            <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,28,0,0">
+                    <sdk:Label  Height="28" Content="{Binding Path=qtr2Lbl}" Cursor="Hand" HorizontalAlignment="Center"  FontWeight="SemiBold" MouseLeftButtonDown="quarter_MouseLeftButtonDown" />
+                    <my:calendar smallData="{Binding Path=per4}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per5}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per6}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+            </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,28,0,0">
+                    <sdk:Label  Height="28" Content="{Binding Path=qtr3Lbl}" Cursor="Hand" HorizontalAlignment="Center" FontWeight="SemiBold" MouseLeftButtonDown="quarter_MouseLeftButtonDown" />
+                    <my:calendar smallData="{Binding Path=per7}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per8}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per9}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                </StackPanel>
+                <StackPanel Orientation="Vertical" VerticalAlignment="Top" Margin="0,28,0,0">
+                    <sdk:Label  Height="28" Content="{Binding Path=qtr4Lbl}" Cursor="Hand" HorizontalAlignment="Center" FontWeight="SemiBold"  MouseLeftButtonDown="quarter_MouseLeftButtonDown" />
+                    <my:calendar smallData="{Binding Path=per10}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per11}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                    <my:calendar smallData="{Binding Path=per12}" editable="True" startWeek="{Binding Path=startWeek, Mode=TwoWay}" endWeek="{Binding Path=endWeek, Mode=TwoWay}" oneWeek="{Binding Path=oneWeek, Mode=TwoWay}" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</UserControl>

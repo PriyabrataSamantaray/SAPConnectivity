@@ -1,0 +1,22 @@
+﻿<controls:ChildWindow x:Class="slControls.metaGrid.filters.filterWindow"
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:controls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+
+           Title="filterWindow">
+    <Grid Name="layoutRoot">
+        <Canvas Name="myCanvas"  Width="298" Height="322" Margin="0,23,3,43">
+            <Image Source="/slControls;component/metaGrid/filters/img/Filter-On.png" Width="50" Height="50" Name="filterImg"  MouseLeftButtonDown="chgFilter" Canvas.Left="2" MouseEnter="hover_MouseEnter" MouseLeave="hover_MouseLeave">
+                <ToolTipService.ToolTip >
+                    <ToolTip Content="All On"></ToolTip>
+                </ToolTipService.ToolTip>
+            </Image>
+
+            <Button Canvas.Left="71" Canvas.Top="12" Content="Apply" Height="23" Name="button1" Width="75" Click="button1_Click"  MouseEnter="button1_MouseEnter" MouseLeave="button1_MouseLeave" />
+            <ScrollViewer Name="myScroller" Width="295" Height="281" Canvas.Top="56" Canvas.Left="0" VerticalScrollBarVisibility="Auto" >
+                <Grid x:Name="myTable" Background="Transparent" Width="250"  Canvas.Left="0" Canvas.Top="56"   />
+            </ScrollViewer>
+
+        </Canvas>
+    </Grid>
+</controls:ChildWindow>
